@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://EnemyScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Hazards.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node"]
 
@@ -12,3 +13,8 @@ position = Vector2( 105, 114 )
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 707, 298 )
+
+[node name="Hazards" parent="." instance=ExtResource( 3 )]
+position = Vector2( 117, 55 )
+
+[connection signal="body_shape_entered" from="Hazards" to="Hazards" method="_on_Hazards_body_shape_entered"]
