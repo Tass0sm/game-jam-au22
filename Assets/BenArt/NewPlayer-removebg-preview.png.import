@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/NewEnemy-removebg-preview.png-1a9b424838568627729a7ce88ca6d4c4.stex"
+path="res://.import/NewPlayer-removebg-preview.png-930a345e33d30df0bb47d57e335c410b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BenArt/NewEnemy-removebg-preview.png"
-dest_files=[ "res://.import/NewEnemy-removebg-preview.png-1a9b424838568627729a7ce88ca6d4c4.stex" ]
+source_file="res://Assets/BenArt/NewPlayer-removebg-preview.png"
+dest_files=[ "res://.import/NewPlayer-removebg-preview.png-930a345e33d30df0bb47d57e335c410b.stex" ]
 
 [params]
 
