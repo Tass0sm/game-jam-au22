@@ -12,7 +12,7 @@ var map_cellsize
 func _ready():
 	map_limits = $TileMap.get_used_rect()
 	map_cellsize = $TileMap.cell_size
-	#Player.set_camera_limits(map_limits, map_cellsize)
+	$Player.set_camera_limits(map_limits, map_cellsize)
 	pass # Replace with function body.
 
 

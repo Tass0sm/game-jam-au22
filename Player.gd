@@ -40,7 +40,7 @@ func pull_enemy(enemy):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Look at mouse
-	#rotation = get_global_mouse_position().angle_to_point(position)
+	rotation = get_global_mouse_position().angle_to_point(position)
 	
 	# check all enemies and see if they are visible
 	for enemy in get_tree().get_nodes_in_group("enemies"):
