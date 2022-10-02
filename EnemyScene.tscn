@@ -22,7 +22,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 43.0
+radius = 37.054
 
 [node name="Enemy" type="RigidBody2D" groups=["enemies"]]
 collision_mask = 0
