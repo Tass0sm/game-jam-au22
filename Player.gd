@@ -16,6 +16,12 @@ var push_pull_strength = 20
 func _ready():
 	pass # Replace with function body.
 
+func set_camera_limits(map_limits, map_cellsize):
+	$Camera.limit_left = map_limits.position.x * map_cellsize.x
+	$Camera.limit_right = map_limits.end.x * map_cellsize.x
+	$Camera.limit_top = map_limits.position.y * map_cellsize.y
+	$Camera.limit_bottom = map_limits.end.y * map_cellsize.y
+
 func is_enemy_visible(enemy):
 	var player_to_mouse = position.direction_to(get_global_mouse_position())
 	var player_to_enemy = position.direction_to(enemy.position)
