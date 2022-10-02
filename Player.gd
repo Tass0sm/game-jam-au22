@@ -30,11 +30,11 @@ func is_enemy_visible(enemy):
 	return distance_to_enemy < max_distance && abs(angle_to_enemy) < max_vision_angle
 
 func push_enemy(enemy):
-	var player_to_enemy = position.direction_to(enemy.position)
+	var player_to_enemy = (enemy.position - position).normalized()
 	enemy.apply_central_impulse(player_to_enemy * push_pull_strength)
 	
 func pull_enemy(enemy):
-	var player_to_enemy = position.direction_to(enemy.position)
+	var player_to_enemy = (enemy.position - position).normalized()
 	enemy.apply_central_impulse(player_to_enemy * -push_pull_strength)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,12 +43,20 @@ func _process(delta):
 	rotation = get_global_mouse_position().angle_to_point(position)
 	
 	# check all enemies and see if they are visible
-	for enemy in get_tree().get_nodes_in_group("enemies"):
-		if is_enemy_visible(enemy):
+	var visible_enemy_count = 0
+	
+	for body in $FrontArea.get_overlapping_bodies():
+		if body.is_in_group("enemies"):
 			if Input.is_action_pressed("mouse_left"):
-				push_enemy(enemy)
+				push_enemy(body)
 			if Input.is_action_pressed("mouse_right"):
-				pull_enemy(enemy)
+				pull_enemy(body)
+			
+			#var player_to_mouse = position.direction_to(get_global_mouse_position())
+			#var player_to_enemy = position.direction_to(enemy.position)
+			visible_enemy_count += 1
+				
+	print(visible_enemy_count)
 	pass
 	
 func _physics_process(delta):
