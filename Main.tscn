@@ -16,6 +16,7 @@ position = Vector2( 707, 298 )
 [node name="Level" parent="." instance=ExtResource( 3 )]
 
 [node name="Hazards" parent="." instance=ExtResource( 1 )]
+position = Vector2( 855, 576 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

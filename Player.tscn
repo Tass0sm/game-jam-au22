@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/BenArt/NewPlayer-removebg-preview.png" type="Texture" id=1]
+[ext_resource path="res://Assets/BenArt/NewPlayerUnicorn-removebg-preview.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -12,29 +12,27 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 16.0
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 7.5, 16 )
+radius = 54.0833
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 91, 10 )
+extents = Vector2( 54.6106, 49.9695 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+height = 95.4534
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 0, 1 )
+rotation = -1.52654
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 43.6657, 14.0821 )
+rotation = 1.8782
 frames = SubResource( 1 )
 
 [node name="BodyCollider" type="CollisionShape2D" parent="."]
+rotation = -0.00670352
 shape = SubResource( 2 )
-
-[node name="BackCollider" type="Area2D" parent="."]
-position = Vector2( -11, 0 )
-
-[node name="BodyCollider" type="CollisionShape2D" parent="BackCollider"]
-position = Vector2( -3, 0 )
-shape = SubResource( 3 )
 
 [node name="Camera" type="Camera2D" parent="."]
 current = true
@@ -42,6 +40,12 @@ current = true
 [node name="FrontArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FrontArea"]
-position = Vector2( 81, 0 )
+position = Vector2( -3.39148, -3.1662 )
+rotation = 0.70412
 scale = Vector2( 0.888615, 1 )
 shape = SubResource( 4 )
+
+[node name="BodyCollider2" type="CollisionShape2D" parent="."]
+position = Vector2( 97.082, -0.294907 )
+rotation = 1.74882
+shape = SubResource( 5 )

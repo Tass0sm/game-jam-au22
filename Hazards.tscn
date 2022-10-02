@@ -12,6 +12,7 @@ animations = [ {
 } ]
 
 [node name="Hazards" type="Area2D"]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -20,8 +21,8 @@ scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( -95.164, 22.135 )
+position = Vector2( -95, 21 )
 scale = Vector2( 0.217262, 0.192819 )
-polygon = PoolVector2Array( 318, -174, 352, -109, 314, -54, 384, -53, 428, 4, 471, -51, 541, -58, 510, -112, 545, -172, 465, -174, 427, -231, 388, -175 )
+polygon = PoolVector2Array( 318, -174, 352, -109, 317.589, -46.6758, 386.63, -46.6758, 428.055, 20.7448, 471, -51, 538.521, -46.6758, 510, -112, 545, -172, 465, -174, 427, -231, 388, -175 )
 
 [connection signal="area_entered" from="." to="." method="_on_Hazards_area_entered"]
